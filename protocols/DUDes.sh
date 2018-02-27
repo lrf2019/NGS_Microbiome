@@ -7,16 +7,24 @@
 #string externalSampleID
 #string project
 #string intermediateDir
+#string dudesVersion
+#string sampleBowtie2Sam
+#string DudesReferenceNpz
+#string sampleDudesOut
+
+makeTmpDir ${sampleDudesOut}
+tmpsampleDudesOut=${MC_tmpFile}
 
 #Load module
+module load ${dudesVersion}
 
-module load dudes/v0.08-foss-2015b-Python-3.4.1
-
-python3 /groups/umcg-gastrocol/tmp03/metagenomic_tools/dudes_v0_07/DUDes.py \
--s ./$SAMPLE_ID/DUDes/$SAMPLE_ID_output.sam \
--d /groups/umcg-gastrocol/tmp03/metagenomic_tools/dudes_v0_07/custom_db/DUDES_refseq_db.npz \
+python3 ${EBROORDUDES}/DUDes.py \
+-s ${sampleBowtie2Sam} \
+-d ${DudesReferenceNpz} \
 -t 6 \
 -m 50 \
 -a 0.0005 \
 -l strain \
--o ./$SAMPLE_ID/DUDes/$SAMPLE_ID
+-o ${tmpsampleDudesOut}
+
+mv ${tmpsampleDudesOut}/* ${intermediateDir}
