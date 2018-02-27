@@ -9,11 +9,12 @@
 #string project
 #string intermediateDir
 #string sampleKneadDataOut
-
+#string kneaddataVersion
+#string Bowtie2Version
 
 #Load module
-module load kneaddata/v0.5.1-foss-2015b-Python-2.7.11
-module load Bowtie2/2.2.9-foss-2015b
+module load ${kneaddataVersion}
+module load ${Bowtie2Version}
 
 echo "Remove reads mapping the human genome and quality filtering with Kneaddata:"
 

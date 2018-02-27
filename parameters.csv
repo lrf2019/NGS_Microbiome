@@ -1,3 +1,11 @@
+##### Tools #####
+kneaddataVersion,kneaddata/v0.5.1-foss-2015b-Python-2.7.11
+Bowtie2Version,Bowtie2/2.2.9-foss-2015b
+fastqcVersion,FastQC/0.11.5-Java-1.8.0_74
+picardVersion,picard/2.9.2-Java-1.8.0_74
+humann2Version,humann2/v0.6.1-foss-2015b-Python-2.7.11
+metaphlan2Version,MetaPhlAn/2.7.2-foss-2015b
+
 ##### Projects #####
 tmpDataDir,/groups/${group}/tmp04
 generalProjectDir,${tmpDataDir}/projects/
@@ -10,7 +18,12 @@ projectLogsDir,${projectDir}/logs/
 projectResultsDir,${projectDir}/results/
 projectQcDir,${projectDir}/qc/
 bowtie2Reference,/apps/data/ftp.broadinstitute.org/bundle/2.8/b37/Bowtie2-2.2.9-foss-2015b/
+DudesReference,/apps/data/dudes/v0_07/custom_db/db_refseq_20052017
 sampleKneadDataOut,${intermediateDir}/kneaddata_${externalSampleID}/
 MetaPhlAn2Index,/apps/data/MetaPhlAn2/db_v20/mpa_v20_m200.pkl
 sampleMetaphlanOutDir,${intermediateDir}/metaphlan/
 sampleMetaphlanOutTxt,${sampleMetaphlanOutDir}/${externalSampleID}_metaphlan.txt
+sampleKneadDataMergedFasta,sampleKneadDataOut/${externalSampleID}_merged.fasta
+sampleKneadDataOutPE1,${intermediateDir}/${externalSampleID}_1_kneaddata_paired_1.fastq
+sampleKneadDataOutPE2,${intermediateDir}/${externalSampleID}_2_kneaddata_paired_2.fastq
+sampleBowtie2Sam,${intermediateDir}/${externalSampleID}_Bowtie2.sam

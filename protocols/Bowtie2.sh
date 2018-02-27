@@ -7,17 +7,27 @@
 #string externalSampleID
 #string project
 #string intermediateDir
+#string DudesReference
+#string sampleKneadDataOutPE1
+#string sampleKneadDataOutPE2
+#string sampleBowtie2Sam
+#string Bowtie2Version
 
 #Load module
+module load ${Bowtie2Version}
+module list
 
-module load Bowtie2/2.2.9-foss-2015b
+makeTmpDir ${sampleBowtie2Sam}
+tmpsampleBowtie2Sam=${MC_tmpFile}
 
-bowtie2 \
--x /groups/umcg-gastrocol/tmp03/metagenomic_tools/dudes_v0_07/custom_db/db_refseq_20052017 \
+${EBROOTBOWTIE2}/bin/bowtie2 \
+-x ${DudesReference} \
 --no-unal \
 --fast \
 -p 6 \
 -k 50 \
--1 ./$SAMPLE_ID/clean_reads/$SAMPLE_ID_1_kneaddata_paired_1.fastq \
--2 ./$SAMPLE_ID/clean_reads/$SAMPLE_ID_1_kneaddata_paired_2.fastq \
--S ./$SAMPLE_ID/DUDes/$SAMPLE_ID_output.sam
+-1 ${sampleKneadDataOutPE1} \
+-2 ${sampleKneadDataOutPE2} \
+-S ${sampleBowtie2Sam}
+
+mv ${tmpsampleBowtie2Sam} ${sampleBowtie2Sam}

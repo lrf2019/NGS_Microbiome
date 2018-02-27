@@ -11,6 +11,7 @@
 #string MetaPhlAn2Index
 #string sampleMetaphlanOutDir
 #string sampleMetaphlanOutTxt
+#string metaphlan2Version
 
 makeTmpDir ${sampleMetaphlanOutDir}
 tmpsampleMetaphlanOutDir=${MC_tmpFile}
@@ -18,7 +19,7 @@ tmpsampleMetaphlanOutDir=${MC_tmpFile}
 mkdir -p "${sampleMetaphlanOutDir}"
 
 #Load module
-module load MetaPhlAn/2.7.2-foss-2015b
+module load ${metaphlan2Version}
 
 echo "Starting taxonomy classification using Metaphlan"
 metaphlan2.py ${sampleKneadDatafilteredFasta} \

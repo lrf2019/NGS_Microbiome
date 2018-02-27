@@ -1,11 +1,27 @@
+#MOLGENIS nodes=1 ppn=1 mem=1gb walltime=05:00:00
 
+#Parameter mapping
+#string seqType
+#string fastq1
+#string fastq2
+#string bowtie2Reference
+#string externalSampleID
+#string project
+#string intermediateDir
+#string sampleKneadDataOut
+#string kneaddataVersion
+#string Bowtie2Version
+#string picardVersion
+#string Bowtie2Version
+#string humann2Version
 
+makeTmpDir ${sampleKneadDataOut}
+tmpsampleKneadDataOut=${MC_tmpFile}
 
-
-module load picard 
-module load Python/3.4.1-foss-2015b
-module load Bowtie2
-module load humann2/v0.6.1-foss-2015b-Python-2.7.11
+#Load module
+module load ${picardVersion}
+module load ${Bowtie2Version}
+module load ${humann2Version}
 
 export PATH=$PATH:/groups/umcg-gastrocol/tmp03/metagenomic_tools/metaphlan_2/
 export PATH=$PATH:/home/umcg-avich/.local/bin
