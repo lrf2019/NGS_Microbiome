@@ -1,0 +1,16 @@
+##### Projects #####
+tmpDataDir,/groups/${group}/tmp04
+generalProjectDir,${tmpDataDir}/projects/
+projectDir,${generalProjectDir}/${project}/${runid}
+projectRawtmpDataDir,${projectDir}/rawdata/ngs/
+intermediateDir,${tmpDataDir}/tmp/${project}/${runid}/
+projectPrefix,${intermediateDir}/${project}
+projectJobsDir,${projectDir}/jobs/
+projectLogsDir,${projectDir}/logs/
+projectResultsDir,${projectDir}/results/
+projectQcDir,${projectDir}/qc/
+bowtie2Reference,/apps/data/ftp.broadinstitute.org/bundle/2.8/b37/Bowtie2-2.2.9-foss-2015b/
+sampleKneadDataOut,${intermediateDir}/kneaddata_${externalSampleID}/
+MetaPhlAn2Index,/apps/data/MetaPhlAn2/db_v20/mpa_v20_m200.pkl
+sampleMetaphlanOutDir,${intermediateDir}/metaphlan/
+sampleMetaphlanOutTxt,${sampleMetaphlanOutDir}/${externalSampleID}_metaphlan.txt

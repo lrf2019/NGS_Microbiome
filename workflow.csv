@@ -1,8 +1,8 @@
 step,protocol,dependencies
 s01_TrimReads,protocols/TrimReads.sh,
 s02_FastQC,protocols/FastQC.sh,s00a_TrimReads
-s03_kneaddata,protocols/kneaddata.sh,s02_FastQC
-s04_Metaphlan2,protocols/Metaphlan2.sh,s03_kneaddata
-s05_bowtie2,protocols/bowtie2.sh,s04_Metaphlan2
-s06_DUDes,protocols/DUDes.sh,s05_bowtie2
-s07_humann2,protocols/humann2.sh,s06_DUDes
+s03_Kneaddata,protocols/Kneaddata.sh,s02_FastQC
+s04_Metaphlan2,protocols/Metaphlan2.sh,s03_Kneaddata
+s05_Bowtie2,protocols/Bowtie2.sh,s04_Metaphlan2
+s06_DUDes,protocols/DUDes.sh,s05_Bowtie2
+s07_Humann2,protocols/Humann2.sh,s06_DUDes
