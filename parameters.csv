@@ -9,9 +9,11 @@ dudesVersion,dudes/v0.08-foss-2015b-Python-3.4.1
 
 ##### Projects #####
 tmpDataDir,/groups/${group}/tmp04
+logsDir,${tmpDataDir}/logs
 generalProjectDir,${tmpDataDir}/projects/
+logsDir
 projectDir,${generalProjectDir}/${project}/${runid}
-projectRawtmpDataDir,${projectDir}/rawdata/ngs/
+projectRawtmpDataDir,${projectDir}/rawdata/ngs
 intermediateDir,${tmpDataDir}/tmp/${project}/${runid}/
 projectPrefix,${intermediateDir}/${project}
 projectJobsDir,${projectDir}/jobs/
@@ -23,10 +25,12 @@ DudesReference,/apps/data/dudes/v0_07/custom_db/db_refseq_20052017
 DudesReferenceNpz,/apps/data/dudes/v0_07/custom_db/DUDES_refseq_db.npz
 sampleKneadDataOut,${intermediateDir}/kneaddata_${externalSampleID}/
 MetaPhlAn2Index,/apps/data/MetaPhlAn2/db_v20/mpa_v20_m200.pkl
+sampleRawtmpDataR1,${projectRawtmpDataDir}/${externalSampleID}_1.fq.gz
+sampleRawtmpDataR2,${projectRawtmpDataDir}/${externalSampleID}_2.fq.gz
 sampleMetaphlanOutDir,${intermediateDir}/metaphlan/
 sampleMetaphlanOutTxt,${sampleMetaphlanOutDir}/${externalSampleID}_metaphlan.txt
-sampleKneadDataMergedFasta,sampleKneadDataOut/${externalSampleID}_merged.fasta
-sampleKneadDataOutPE1,${intermediateDir}/${externalSampleID}_1_kneaddata_paired_1.fastq
-sampleKneadDataOutPE2,${intermediateDir}/${externalSampleID}_2_kneaddata_paired_2.fastq
+sampleKneadDataMergedFasta,${sampleKneadDataOut}/${externalSampleID}.kneaddata.merged.fastq
+sampleKneadDataOutPE1,${sampleKneadDataOut}/${externalSampleID}_1_kneaddata_paired_1.fastq
+sampleKneadDataOutPE2,${sampleKneadDataOut}/${externalSampleID}_1_kneaddata_paired_2.fastq
 sampleBowtie2Sam,${intermediateDir}/${externalSampleID}_Bowtie2.sam
 sampleDudesOut,${intermediateDir}/${externalSampleID}_Dudes

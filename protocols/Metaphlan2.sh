@@ -1,4 +1,4 @@
-#MOLGENIS nodes=1 ppn=1 mem=1gb walltime=05:00:00
+#MOLGENIS nodes=1 ppn=6 mem=40gb walltime=23:00:00
 
 #Parameter mapping
 #string seqType
@@ -12,6 +12,10 @@
 #string sampleMetaphlanOutDir
 #string sampleMetaphlanOutTxt
 #string metaphlan2Version
+#string project
+#string group
+#string tmpDirectory
+#string logsDir
 
 makeTmpDir ${sampleMetaphlanOutDir}
 tmpsampleMetaphlanOutDir=${MC_tmpFile}
@@ -22,11 +26,11 @@ mkdir -p "${sampleMetaphlanOutDir}"
 module load ${metaphlan2Version}
 
 echo "Starting taxonomy classification using Metaphlan"
-metaphlan2.py ${sampleKneadDatafilteredFasta} \
+metaphlan2.py ${sampleKneadDataMergedFasta} \
 --input_type multifastq \
 --mpa_pkl ${MetaPhlAn2Index} \
 --nproc 6 \
--o ${tmpsampleMetaphlanOutTxt} \
---tmp_dir ${intermediateDir}/
+-o ${tmpsampleMetaphlanOutDir}/${externalSampleID}_metaphlan.txt \
+--tmp_dir ${tmpsampleMetaphlanOutDir}
 
-mv ${tmpsampleMetaphlanOutTxt} ${sampleMetaphlanOutTxt}
+mv ${tmpsampleMetaphlanOutDir}/${externalSampleID}_metaphlan.txt ${sampleMetaphlanOutTxt}

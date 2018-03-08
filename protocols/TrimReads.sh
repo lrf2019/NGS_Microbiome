@@ -7,6 +7,10 @@
 #string externalSampleID
 #string project
 #string intermediateDir
+#string project
+#string group
+#string tmpDirectory
+#string logsDir
 
 #Echo parameter values
 echo "seqType: ${seqType}"

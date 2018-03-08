@@ -2,11 +2,16 @@
 
 #Parameter mapping
 #string seqType
-#string fastq1
-#string fastq2
+#string sampleRawtmpDataR1
+#string sampleRawtmpDataR2
 #string externalSampleID
+#string fastqcVersion
 #string project
 #string intermediateDir
+#string project
+#string group
+#string tmpDirectory
+#string logsDir
 
 #Load module
 module load ${fastqcVersion}
@@ -19,16 +24,16 @@ tmpintermediateDir=${MC_tmpFile}
 if [ ${seqType} == "PE" ]
 then
 	# end1 & end2
-	fastqc ${fastq1} \
-	${fastq2} \
+	fastqc ${sampleRawtmpDataR1} \
+	${sampleRawtmpDataR2} \
 	-o ${tmpintermediateDir}
 
 	echo -e "\nFastQC finished succesfull. Moving temp files to final.\n\n"
 	mv -f ${tmpintermediateDir}/* ${intermediateDir}
 else
-	fastqc ${fastq1} \
+	fastqc ${sampleRawtmpDataR1} \
 	-o ${tmpintermediateDir}
-	
+
 	echo -e "\nFastQC finished succesfull. Moving temp files to final.\n\n"
 	mv -f ${tmpintermediateDir}/* ${intermediateDir}
 fi

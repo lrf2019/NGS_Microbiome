@@ -1,4 +1,4 @@
-#MOLGENIS nodes=1 ppn=1 mem=1gb walltime=05:00:00
+#MOLGENIS nodes=1 ppn=1 mem=40gb walltime=23:59:00
 
 #Parameter mapping
 #string seqType
@@ -12,6 +12,10 @@
 #string sampleKneadDataOutPE2
 #string sampleBowtie2Sam
 #string Bowtie2Version
+#string project
+#string group
+#string tmpDirectory
+#string logsDir
 
 #Load module
 module load ${Bowtie2Version}
@@ -28,6 +32,6 @@ ${EBROOTBOWTIE2}/bin/bowtie2 \
 -k 50 \
 -1 ${sampleKneadDataOutPE1} \
 -2 ${sampleKneadDataOutPE2} \
--S ${sampleBowtie2Sam}
+-S ${tmpsampleBowtie2Sam}
 
 mv ${tmpsampleBowtie2Sam} ${sampleBowtie2Sam}

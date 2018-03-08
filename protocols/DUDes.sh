@@ -11,6 +11,10 @@
 #string sampleBowtie2Sam
 #string DudesReferenceNpz
 #string sampleDudesOut
+#string project
+#string group
+#string tmpDirectory
+#string logsDir
 
 makeTmpDir ${sampleDudesOut}
 tmpsampleDudesOut=${MC_tmpFile}

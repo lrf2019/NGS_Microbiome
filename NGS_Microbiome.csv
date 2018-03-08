@@ -1,0 +1,2 @@
+externalSampleID,project,fastq1,fastq2,sampleType,seqType
+SRS015264,NGS_Microbiome,/groups/umcg-gaf/tmp04/generatedscripts/NGS_Microbiome/rawdata/SRS015264/SRS015264.denovo_duplicates_marked.trimmed.1.fastq.gz,/groups/umcg-gaf/tmp04/generatedscripts/NGS_Microbiome/rawdata/SRS015264/SRS015264.denovo_duplicates_marked.trimmed.2.fastq.gz,Microbiome,PE

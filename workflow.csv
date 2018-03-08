@@ -1,8 +1,9 @@
 step,protocol,dependencies
-s01_TrimReads,protocols/TrimReads.sh,
-s02_FastQC,protocols/FastQC.sh,s00a_TrimReads
+s00_CreateExternSamplesProjects,protocols/CreateExternSamplesProjects.sh,
+#s01_TrimReads,protocols/TrimReads.sh,s00_CreateExternSamplesProjects
+s02_FastQC,protocols/FastQC.sh,
 s03_Kneaddata,protocols/Kneaddata.sh,s02_FastQC
 s04_Metaphlan2,protocols/Metaphlan2.sh,s03_Kneaddata
 s05_Bowtie2,protocols/Bowtie2.sh,s04_Metaphlan2
 s06_DUDes,protocols/DUDes.sh,s05_Bowtie2
-s07_Humann2,protocols/Humann2.sh,s06_DUDes
+s07_Humann2,protocols/Humann2.sh,s04_Metaphlan2
