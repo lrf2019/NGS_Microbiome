@@ -1,4 +1,4 @@
-k#!/bin/bash
+#!/bin/bash
 
 #module load NGS_Microbiome
 module load Molgenis-Compute/v17.08.1-Java-1.8.0_74
