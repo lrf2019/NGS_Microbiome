@@ -22,7 +22,7 @@ tmpsampleDudesOut=${MC_tmpFile}
 #Load module
 module load ${dudesVersion}
 
-python3 ${EBROORDUDES}/DUDes.py \
+python3 ${EBROOTDUDES}/DUDes.py \
 -s ${sampleBowtie2Sam} \
 -d ${DudesReferenceNpz} \
 -t 6 \
@@ -31,4 +31,4 @@ python3 ${EBROORDUDES}/DUDes.py \
 -l strain \
 -o ${tmpsampleDudesOut}
 
-mv ${tmpsampleDudesOut}/* ${intermediateDir}
+mv ${tmpsampleDudesOut}* ${intermediateDir}
