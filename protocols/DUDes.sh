@@ -16,19 +16,19 @@
 #string tmpDirectory
 #string logsDir
 
-makeTmpDir ${sampleDudesOut}
+makeTmpDir "${sampleDudesOut}"
 tmpsampleDudesOut=${MC_tmpFile}
 
 #Load module
 module load ${dudesVersion}
 
 python3 ${EBROOTDUDES}/DUDes.py \
--s ${sampleBowtie2Sam} \
--d ${DudesReferenceNpz} \
+-s "${sampleBowtie2Sam}" \
+-d "${DudesReferenceNpz}" \
 -t 6 \
 -m 50 \
 -a 0.0005 \
 -l strain \
--o ${tmpsampleDudesOut}
+-o "${tmpsampleDudesOut}"
 
-mv ${tmpsampleDudesOut}* ${intermediateDir}
+mv "${tmpsampleDudesOut}"* "${intermediateDir}"

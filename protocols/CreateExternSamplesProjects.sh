@@ -22,15 +22,15 @@
 #
 # Create project dirs.
 #
-mkdir -p ${projectRawtmpDataDir}
-mkdir -p ${projectJobsDir}
-mkdir -p ${intermediateDir}
-mkdir -p ${projectResultsDir}
-mkdir -p ${projectQcDir}
+mkdir -p "${projectRawtmpDataDir}"
+mkdir -p "${projectJobsDir}"
+mkdir -p "${intermediateDir}"
+mkdir -p "${projectResultsDir}"
+mkdir -p "${projectQcDir}"
 
-ROCKETPOINT=`pwd`
+ROCKETPOINT=$(pwd)
 
-cd ${projectRawtmpDataDir}
+cd "${projectRawtmpDataDir}"
 
 #
 # Create symlinks to the raw data required to analyse this project

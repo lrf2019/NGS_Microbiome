@@ -18,20 +18,21 @@
 #string logsDir
 
 #Load module
-module load ${Bowtie2Version}
+module load "${Bowtie2Version}"
 module list
 
-makeTmpDir ${sampleBowtie2Sam}
+makeTmpDir "${sampleBowtie2Sam}"
 tmpsampleBowtie2Sam=${MC_tmpFile}
 
 ${EBROOTBOWTIE2}/bin/bowtie2 \
--x ${DudesReference} \
+-x "${DudesReference}" \
 --no-unal \
 --fast \
 -p 6 \
 -k 50 \
--1 ${sampleKneadDataOutPE1} \
--2 ${sampleKneadDataOutPE2} \
--S ${tmpsampleBowtie2Sam}
+-1 "${sampleKneadDataOutPE1}" \
+-2 "${sampleKneadDataOutPE2}" \
+-S "${tmpsampleBowtie2Sam}"
 
-mv ${tmpsampleBowtie2Sam} ${sampleBowtie2Sam}
+echo "mv ${tmpsampleBowtie2Sam} ${sampleBowtie2Sam}"
+mv "${tmpsampleBowtie2Sam}" "${sampleBowtie2Sam}"

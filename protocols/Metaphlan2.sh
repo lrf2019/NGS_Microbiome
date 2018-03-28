@@ -17,7 +17,7 @@
 #string tmpDirectory
 #string logsDir
 
-makeTmpDir ${sampleMetaphlanOutDir}
+makeTmpDir "${sampleMetaphlanOutDir}"
 tmpsampleMetaphlanOutDir=${MC_tmpFile}
 
 mkdir -p "${sampleMetaphlanOutDir}"
@@ -26,11 +26,12 @@ mkdir -p "${sampleMetaphlanOutDir}"
 module load ${metaphlan2Version}
 
 echo "Starting taxonomy classification using Metaphlan"
-metaphlan2.py ${sampleKneadDataMergedFasta} \
+metaphlan2.py "${sampleKneadDataMergedFasta}" \
 --input_type multifastq \
---mpa_pkl ${MetaPhlAn2Index} \
+--mpa_pkl "${MetaPhlAn2Index}" \
 --nproc 6 \
--o ${tmpsampleMetaphlanOutDir}/${externalSampleID}_metaphlan.txt \
---tmp_dir ${tmpsampleMetaphlanOutDir}
+-o "${tmpsampleMetaphlanOutDir}"/"${externalSampleID}"_metaphlan.txt \
+--tmp_dir "${tmpsampleMetaphlanOutDir}"
 
-mv ${tmpsampleMetaphlanOutDir}/${externalSampleID}_metaphlan.txt ${sampleMetaphlanOutTxt}
+echo "mv ${tmpsampleMetaphlanOutDir}/${externalSampleID}_metaphlan.txt ${sampleMetaphlanOutTxt}"
+mv "${tmpsampleMetaphlanOutDir}"/"${externalSampleID}"_metaphlan.txt "${sampleMetaphlanOutTxt}"

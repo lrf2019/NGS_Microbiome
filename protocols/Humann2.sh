@@ -21,7 +21,7 @@
 #string tmpDirectory
 #string logsDir
 
-makeTmpDir ${sampleKneadDataOut}
+makeTmpDir "${sampleKneadDataOut}"
 tmpsampleKneadDataOut=${MC_tmpFile}
 
 #Load module
@@ -29,15 +29,12 @@ module load ${picardVersion}
 module load ${Bowtie2Version}
 module load ${humann2Version}
 
-#export PATH=$PATH:/groups/umcg-gastrocol/tmp03/metagenomic_tools/metaphlan_2/
-#export PATH=$PATH:/home/umcg-avich/.local/bin
-
 echo "Run Humann2, WARNING: Check Humann2 configuration!!! (We currently use Uniref90 + Chocophlan db)"
 echo "Starting pathways prediction using Humann2"
 
 humann2 --input ${sampleKneadDataMergedFasta} \
---output ${intermediateDir} \
---taxonomic-profile ${sampleMetaphlanOutTxt} \
+--output "${intermediateDir}" \
+--taxonomic-profile "${sampleMetaphlanOutTxt}" \
 --threads 6 \
---o-log ${intermediateDir}/${externalSampleID}.full.humann2.log \
+--o-log "${intermediateDir}/${externalSampleID}.full.humann2.log" \
 --remove-temp-output

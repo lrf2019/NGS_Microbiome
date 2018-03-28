@@ -31,18 +31,22 @@ tmpsampleKneadDataOut=${MC_tmpFile}
 mkdir -p "${sampleKneadDataOut}"
 
 kneaddata \
---input ${sampleRawtmpDataR1} \
---input ${sampleRawtmpDataR2} \
+--input "${sampleRawtmpDataR1}" \
+--input "${sampleRawtmpDataR2}" \
 -t 6 \
 -p 7 \
--db ${bowtie2Reference} \
+-db "${bowtie2Reference}" \
 --bowtie2 ${EBROOTBOWTIE2}/bin/ \
---fastqc ${EBROOTFASTQC} \
---output ${tmpsampleKneadDataOut}/ \
---log ${tmpsampleKneadDataOut}/${externalSampleID}.log
+--fastqc "${EBROOTFASTQC}" \
+--output "${tmpsampleKneadDataOut}/" \
+--log "${tmpsampleKneadDataOut}/"${externalSampleID}".log"
 
 cat ${tmpsampleKneadDataOut}/${externalSampleID}_1_kneaddata_paired_1.fastq ${tmpsampleKneadDataOut}/${externalSampleID}_1_kneaddata_paired_2.fastq > ${tmpsampleKneadDataOut}/${externalSampleID}.kneaddata.merged.fastq
-mv ${tmpsampleKneadDataOut}/${externalSampleID}.kneaddata_merged.fastq ${sampleKneadDataOut}/${externalSampleID}.kneaddata.merged.fastq
-mv ${tmpsampleKneadDataOut}/${externalSampleID}_1_kneaddata_paired_1.fastq ${sampleKneadDataOut}
-mv ${tmpsampleKneadDataOut}/${externalSampleID}_1_kneaddata_paired_2.fastq ${sampleKneadDataOut}
-mv ${tmpsampleKneadDataOut}/${externalSampleID}.log ${sampleKneadDataOut}
+echo "mv ${tmpsampleKneadDataOut}/${externalSampleID}.kneaddata_merged.fastq ${sampleKneadDataOut}/${externalSampleID}.kneaddata.merged.fastq"
+echo "mv ${tmpsampleKneadDataOut}/${externalSampleID}_1_kneaddata_paired_1.fastq ${sampleKneadDataOut}"
+echo "mv ${tmpsampleKneadDataOut}/${externalSampleID}_1_kneaddata_paired_2.fastq ${sampleKneadDataOut}"
+echo "mv ${tmpsampleKneadDataOut}/${externalSampleID}.log ${sampleKneadDataOut}"
+mv "${tmpsampleKneadDataOut}"/"${externalSampleID}".kneaddata_merged.fastq "${sampleKneadDataOut}"/"${externalSampleID}".kneaddata.merged.fastq
+mv "${tmpsampleKneadDataOut}"/"${externalSampleID}"_1_kneaddata_paired_1.fastq "${sampleKneadDataOut}"
+mv "${tmpsampleKneadDataOut}"/"${externalSampleID}"_1_kneaddata_paired_2.fastq "${sampleKneadDataOut}"
+mv "${tmpsampleKneadDataOut}"/"${externalSampleID}".log "${sampleKneadDataOut}"
