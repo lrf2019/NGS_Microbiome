@@ -1,8 +1,8 @@
 #MOLGENIS walltime=00:02:00 mem=1gb
 
 #Parameter mapping
-#string fastq1
-#string fastq2
+#list fastq1
+#list fastq2
 #string project
 #string intermediateDir
 #string projectRawtmpDataDir

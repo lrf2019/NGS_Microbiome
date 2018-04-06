@@ -3,6 +3,6 @@ s00_CreateExternSamplesProjects,protocols/CreateExternSamplesProjects.sh,
 s01_FastQC,protocols/FastQC.sh,s00_CreateExternSamplesProjects
 s02_Kneaddata,protocols/Kneaddata.sh,s02_FastQC
 s03_Metaphlan2,protocols/Metaphlan2.sh,s02_Kneaddata
-s04_Bowtie2,protocols/Bowtie2.sh,s03_Metaphlan2
+s04_Bowtie2,protocols/Bowtie2.sh,s02_Kneaddata
 s05_DUDes,protocols/DUDes.sh,s04_Bowtie2
 s06_Humann2,protocols/Humann2.sh,s03_Metaphlan2

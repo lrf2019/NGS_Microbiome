@@ -2,8 +2,6 @@
 
 #Parameter mapping
 #string seqType
-#string fastq1
-#string fastq2
 #string bowtie2Reference
 #string externalSampleID
 #string project
@@ -35,6 +33,10 @@ echo "Starting pathways prediction using Humann2"
 humann2 --input ${sampleKneadDataMergedFasta} \
 --output "${intermediateDir}" \
 --taxonomic-profile "${sampleMetaphlanOutTxt}" \
+--diamond ${EBROOTDIAMOND}/bin/diamond \
+--nucleotide-database "/apps/data/humann2/chocophlan/" \
+--protein-database "/apps/data/humann2/uniref/" \
+--pathways-database "/apps/software/Python/2.7.11-foss-2015b/lib/python2.7/site-packages/humann2/data/misc" \
 --threads 6 \
 --o-log "${intermediateDir}/${externalSampleID}.full.humann2.log" \
 --remove-temp-output

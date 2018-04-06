@@ -1,9 +1,7 @@
-#MOLGENIS nodes=1 ppn=6 mem=4gb walltime=23:00:00
+#MOLGENIS nodes=1 ppn=1 mem=4gb walltime=5:59:00
 
 #Parameter mapping
 #string seqType
-#string fastq1
-#string fastq2
 #string externalSampleID
 #string project
 #string intermediateDir

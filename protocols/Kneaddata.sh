@@ -1,4 +1,4 @@
-#MOLGENIS nodes=1 ppn=6 mem2gb walltime=05:59:00
+#MOLGENIS nodes=1 ppn=1 mem2gb walltime=05:59:00
 
 #Parameter mapping
 #string seqType
@@ -42,11 +42,11 @@ kneaddata \
 --log "${tmpsampleKneadDataOut}/"${externalSampleID}".log"
 
 cat ${tmpsampleKneadDataOut}/${externalSampleID}_1_kneaddata_paired_1.fastq ${tmpsampleKneadDataOut}/${externalSampleID}_1_kneaddata_paired_2.fastq > ${tmpsampleKneadDataOut}/${externalSampleID}.kneaddata.merged.fastq
-echo "mv ${tmpsampleKneadDataOut}/${externalSampleID}.kneaddata_merged.fastq ${sampleKneadDataOut}/${externalSampleID}.kneaddata.merged.fastq"
+echo "mv ${tmpsampleKneadDataOut}/${externalSampleID}.kneaddata.merged.fastq ${sampleKneadDataOut}/${externalSampleID}.kneaddata.merged.fastq"
 echo "mv ${tmpsampleKneadDataOut}/${externalSampleID}_1_kneaddata_paired_1.fastq ${sampleKneadDataOut}"
 echo "mv ${tmpsampleKneadDataOut}/${externalSampleID}_1_kneaddata_paired_2.fastq ${sampleKneadDataOut}"
 echo "mv ${tmpsampleKneadDataOut}/${externalSampleID}.log ${sampleKneadDataOut}"
-mv "${tmpsampleKneadDataOut}"/"${externalSampleID}".kneaddata_merged.fastq "${sampleKneadDataOut}"/"${externalSampleID}".kneaddata.merged.fastq
+mv "${tmpsampleKneadDataOut}"/"${externalSampleID}".kneaddata.merged.fastq "${sampleKneadDataOut}"/"${externalSampleID}".kneaddata.merged.fastq
 mv "${tmpsampleKneadDataOut}"/"${externalSampleID}"_1_kneaddata_paired_1.fastq "${sampleKneadDataOut}"
 mv "${tmpsampleKneadDataOut}"/"${externalSampleID}"_1_kneaddata_paired_2.fastq "${sampleKneadDataOut}"
 mv "${tmpsampleKneadDataOut}"/"${externalSampleID}".log "${sampleKneadDataOut}"
