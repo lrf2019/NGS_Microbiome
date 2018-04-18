@@ -3,7 +3,7 @@ kneaddataVersion,kneaddata/v0.5.1-foss-2015b-Python-2.7.11
 Bowtie2Version,Bowtie2/2.2.9-foss-2015b
 fastqcVersion,FastQC/0.11.5-Java-1.8.0_74
 picardVersion,picard/2.9.2-Java-1.8.0_74
-humann2Version,humann2/v0.6.1-foss-2015b-Python-2.7.11
+humann2Version,humann2/0.11.1-foss-2015b-Python-2.7.11
 metaphlan2Version,MetaPhlAn/2.7.2-foss-2015b
 dudesVersion,dudes/v0.08-foss-2015b-Python-3.4.1
 

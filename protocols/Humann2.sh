@@ -1,4 +1,4 @@
-#MOLGENIS nodes=1 ppn=6 mem=20gb walltime=23:50:00
+#MOLGENIS nodes=1 ppn=6 mem=40gb walltime=23:50:00
 
 #Parameter mapping
 #string seqType
@@ -33,10 +33,9 @@ echo "Starting pathways prediction using Humann2"
 humann2 --input ${sampleKneadDataMergedFasta} \
 --output "${intermediateDir}" \
 --taxonomic-profile "${sampleMetaphlanOutTxt}" \
---diamond ${EBROOTDIAMOND}/bin/diamond \
+--diamond ${EBROOTDIAMOND}/diamond \
 --nucleotide-database "/apps/data/humann2/chocophlan/" \
 --protein-database "/apps/data/humann2/uniref/" \
---pathways-database "/apps/software/Python/2.7.11-foss-2015b/lib/python2.7/site-packages/humann2/data/misc" \
 --threads 6 \
 --o-log "${intermediateDir}/${externalSampleID}.full.humann2.log" \
 --remove-temp-output

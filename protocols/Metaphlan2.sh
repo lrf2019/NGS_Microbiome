@@ -1,4 +1,4 @@
-#MOLGENIS nodes=1 ppn=1 mem=4gb walltime=5:59:00
+#MOLGENIS nodes=1 ppn=1 mem=4gb walltime=23:59:00
 
 #Parameter mapping
 #string seqType
@@ -28,8 +28,8 @@ metaphlan2.py "${sampleKneadDataMergedFasta}" \
 --input_type multifastq \
 --mpa_pkl "${MetaPhlAn2Index}" \
 --nproc 6 \
--o "${tmpsampleMetaphlanOutDir}"/"${externalSampleID}"_metaphlan.txt \
+-o "${sampleMetaphlanOutDir}"/"${externalSampleID}"_metaphlan.txt \
 --tmp_dir "${tmpsampleMetaphlanOutDir}"
 
 echo "mv ${tmpsampleMetaphlanOutDir}/${externalSampleID}_metaphlan.txt ${sampleMetaphlanOutTxt}"
-mv "${tmpsampleMetaphlanOutDir}"/"${externalSampleID}"_metaphlan.txt "${sampleMetaphlanOutTxt}"
+#mv "${tmpsampleMetaphlanOutDir}"/"${externalSampleID}"_metaphlan.txt "${sampleMetaphlanOutTxt}"
