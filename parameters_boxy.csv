@@ -3,4 +3,5 @@ prmName,prm03
 prmHost,localhost
 root,/
 appsDir,${root}/apps/
+dataDir,${appsDir}data/
 toolChain,foss-2015b

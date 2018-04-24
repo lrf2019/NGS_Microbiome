@@ -18,14 +18,14 @@
 #string logsDir
 
 #Load module
-module load ${kneaddataVersion}
-module load ${Bowtie2Version}
-module load ${fastqcVersion}
+module load "${kneaddataVersion}"
+module load "${Bowtie2Version}"
+module load "${fastqcVersion}"
 module list
 
 echo "Remove reads mapping the human genome and quality filtering with Kneaddata:"
 
-makeTmpDir ${sampleKneadDataOut}
+makeTmpDir "${sampleKneadDataOut}"
 tmpsampleKneadDataOut=${MC_tmpFile}
 
 mkdir -p "${sampleKneadDataOut}"
@@ -41,7 +41,7 @@ kneaddata \
 --output "${tmpsampleKneadDataOut}/" \
 --log "${tmpsampleKneadDataOut}/"${externalSampleID}".log"
 
-cat ${tmpsampleKneadDataOut}/${externalSampleID}_1_kneaddata_paired_1.fastq ${tmpsampleKneadDataOut}/${externalSampleID}_1_kneaddata_paired_2.fastq > ${tmpsampleKneadDataOut}/${externalSampleID}.kneaddata.merged.fastq
+cat ${tmpsampleKneadDataOut}/"${externalSampleID}"_1_kneaddata_paired_1.fastq ${tmpsampleKneadDataOut}/"${externalSampleID}"_1_kneaddata_paired_2.fastq > "${tmpsampleKneadDataOut}"/"${externalSampleID}".kneaddata.merged.fastq
 echo "mv ${tmpsampleKneadDataOut}/${externalSampleID}.kneaddata.merged.fastq ${sampleKneadDataOut}/${externalSampleID}.kneaddata.merged.fastq"
 echo "mv ${tmpsampleKneadDataOut}/${externalSampleID}_1_kneaddata_paired_1.fastq ${sampleKneadDataOut}"
 echo "mv ${tmpsampleKneadDataOut}/${externalSampleID}_1_kneaddata_paired_2.fastq ${sampleKneadDataOut}"

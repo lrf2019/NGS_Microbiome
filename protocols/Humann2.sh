@@ -18,24 +18,26 @@
 #string group
 #string tmpDirectory
 #string logsDir
+#string chocophlanDB
+#string unirefDB
 
 makeTmpDir "${sampleKneadDataOut}"
 tmpsampleKneadDataOut=${MC_tmpFile}
 
 #Load module
-module load ${picardVersion}
-module load ${Bowtie2Version}
-module load ${humann2Version}
+module load "${picardVersion}"
+module load "${Bowtie2Version}"
+module load "${humann2Version}"
 
 echo "Run Humann2, WARNING: Check Humann2 configuration!!! (We currently use Uniref90 + Chocophlan db)"
 echo "Starting pathways prediction using Humann2"
 
-humann2 --input ${sampleKneadDataMergedFasta} \
+humann2 --input "${sampleKneadDataMergedFasta}" \
 --output "${intermediateDir}" \
 --taxonomic-profile "${sampleMetaphlanOutTxt}" \
 --diamond ${EBROOTDIAMOND}/diamond \
---nucleotide-database "/apps/data/humann2/chocophlan/" \
---protein-database "/apps/data/humann2/uniref/" \
+--nucleotide-database "${chocophlanDB}" \
+--protein-database "${unirefDB}" \
 --threads 6 \
 --o-log "${intermediateDir}/${externalSampleID}.full.humann2.log" \
 --remove-temp-output

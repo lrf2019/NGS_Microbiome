@@ -20,11 +20,13 @@ projectJobsDir,${projectDir}/jobs/
 projectLogsDir,${projectDir}/logs/
 projectResultsDir,${projectDir}/results/
 projectQcDir,${projectDir}/qc/
-bowtie2Reference,/apps/data/ftp.broadinstitute.org/bundle/2.8/b37/Bowtie2-2.2.9-foss-2015b/
-DudesReference,/apps/data/dudes/v0_07/custom_db/db_refseq_20052017
-DudesReferenceNpz,/apps/data/dudes/v0_07/custom_db/DUDES_refseq_db.npz
+bowtie2Reference,${dataDir}/ftp.broadinstitute.org/bundle/2.8/b37/Bowtie2-2.2.9-foss-2015b/
+DudesReference,${dataDir}/dudes/v0_07/custom_db/db_refseq_20052017
+DudesReferenceNpz,${dataDir}/dudes/v0_07/custom_db/DUDES_refseq_db.npz
 sampleKneadDataOut,${intermediateDir}/kneaddata_${externalSampleID}/
-MetaPhlAn2Index,/apps/data/MetaPhlAn2/db_v20/mpa_v21_m200/mpa_v20_m200.pkl
+MetaPhlAn2Index,${dataDir}/MetaPhlAn2/db_v20/mpa_v21_m200/mpa_v20_m200.pkl
+chocophlanDB,${dataDir}/humann2/chocophlan/
+unirefDB,${dataDir}/humann2/uniref/
 sampleRawtmpDataR1,${projectRawtmpDataDir}/${externalSampleID}_1.fq.gz
 sampleRawtmpDataR2,${projectRawtmpDataDir}/${externalSampleID}_2.fq.gz
 sampleMetaphlanOutDir,${intermediateDir}/metaphlan_${externalSampleID}/

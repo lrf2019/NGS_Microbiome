@@ -21,7 +21,8 @@ tmpsampleMetaphlanOutDir=${MC_tmpFile}
 mkdir -p "${sampleMetaphlanOutDir}"
 
 #Load module
-module load ${metaphlan2Version}
+module load "${metaphlan2Version}"
+module list
 
 echo "Starting taxonomy classification using Metaphlan"
 metaphlan2.py "${sampleKneadDataMergedFasta}" \

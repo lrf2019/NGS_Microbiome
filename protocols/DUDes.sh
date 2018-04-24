@@ -20,7 +20,7 @@ makeTmpDir "${sampleDudesOut}"
 tmpsampleDudesOut=${MC_tmpFile}
 
 #Load module
-module load ${dudesVersion}
+module load "${dudesVersion}"
 
 python3 ${EBROOTDUDES}/DUDes.py \
 -s "${sampleBowtie2Sam}" \
