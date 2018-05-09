@@ -1,9 +1,9 @@
-#MOLGENIS nodes=1 ppn=1 mem=1gb walltime=05:00:00
+#MOLGENIS nodes=1 ppn=1 mem=1gb walltime=01:00:00
 
 #Parameter mapping
 #string seqType
-#string sampleRawtmpDataR1
-#string sampleRawtmpDataR2
+#string fastq1
+#string fastq2
 #string externalSampleID
 #string fastqcVersion
 #string project
@@ -24,14 +24,14 @@ tmpintermediateDir=${MC_tmpFile}
 if [ ${seqType} == "PE" ]
 then
 	# end1 & end2
-	fastqc ${sampleRawtmpDataR1} \
-	${sampleRawtmpDataR2} \
+	fastqc ${fastq1} \
+	${fastq2} \
 	-o ${tmpintermediateDir}
 
 	echo -e "\nFastQC finished succesfull. Moving temp files to final.\n\n"
 	mv -f ${tmpintermediateDir}/* ${intermediateDir}
 else
-	fastqc ${sampleRawtmpDataR1} \
+	fastqc ${fastq1} \
 	-o ${tmpintermediateDir}
 
 	echo -e "\nFastQC finished succesfull. Moving temp files to final.\n\n"

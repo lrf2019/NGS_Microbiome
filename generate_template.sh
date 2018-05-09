@@ -72,7 +72,7 @@ sh ${EBROOTMOLGENISMINCOMPUTE}/molgenis_compute.sh \
 --generate \
 -o "tmpDirectory=${tmpDirectory};\
 group=${group};\
-workDir=${workDir};
+workDir=${workDir};\
 filePrefix=${filePrefix};\
 runID=${runID};\
-samplesheet=${samplesheet};"
+samplesheet=${samplesheet}"

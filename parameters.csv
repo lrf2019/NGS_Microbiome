@@ -12,6 +12,7 @@ tmpDataDir,${workDir}
 logsDir,${tmpDataDir}/logs
 generalProjectDir,${workDir}/projects/
 logsDir
+SR,SR
 projectDir,${generalProjectDir}/${project}/${runid}
 projectRawtmpDataDir,${projectDir}/rawdata/ngs
 intermediateDir,${workDir}/tmp/${project}/${runid}/
@@ -31,7 +32,7 @@ sampleRawtmpDataR1,${projectRawtmpDataDir}/${externalSampleID}_1.fq.gz
 sampleRawtmpDataR2,${projectRawtmpDataDir}/${externalSampleID}_2.fq.gz
 sampleMetaphlanOutDir,${intermediateDir}/metaphlan_${externalSampleID}/
 sampleMetaphlanOutTxt,${sampleMetaphlanOutDir}/${externalSampleID}_metaphlan.txt
-sampleKneadDataMergedFasta,${sampleKneadDataOut}/${externalSampleID}.kneaddata.merged.fastq
+sampleKneadDataMergedFastq,${sampleKneadDataOut}/${externalSampleID}.kneaddata.merged.fastq
 sampleKneadDataOutPE1,${sampleKneadDataOut}/${externalSampleID}_1_kneaddata_paired_1.fastq
 sampleKneadDataOutPE2,${sampleKneadDataOut}/${externalSampleID}_1_kneaddata_paired_2.fastq
 sampleBowtie2Sam,${intermediateDir}/${externalSampleID}_Bowtie2.sam

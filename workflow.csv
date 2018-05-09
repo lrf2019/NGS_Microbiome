@@ -1,8 +1,11 @@
 step,protocol,dependencies
 s00_CreateExternSamplesProjects,protocols/CreateExternSamplesProjects.sh,
-s01_FastQC,protocols/FastQC.sh,s00_CreateExternSamplesProjects
+s01_FastQC_before,protocols/FastQC.sh,s00_CreateExternSamplesProjects;fastq1=sampleRawtmpDataR1;fastq2=sampleRawtmpDataR2
 s02_Kneaddata,protocols/Kneaddata.sh,s02_FastQC
-s03_Metaphlan2,protocols/Metaphlan2.sh,s02_Kneaddata
-s04_Bowtie2,protocols/Bowtie2.sh,s02_Kneaddata
-s05_DUDes,protocols/DUDes.sh,s04_Bowtie2
-s06_Humann2,protocols/Humann2.sh,s03_Metaphlan2
+s03_FastQC_after,protocols/FastQC.sh,s02_Kneaddata;fastq1=sampleKneadDataMergedFastq;seqType=SR
+s04_Metaphlan2,protocols/Metaphlan2.sh,s02_Kneaddata
+s05_Bowtie2,protocols/Bowtie2.sh,s02_Kneaddata
+s06_DUDes,protocols/DUDes.sh,s05_Bowtie2
+s07_Humann2,protocols/Humann2.sh,s04_Metaphlan2
+s08_CountAllFinishedFiles,protocols/CountAllFinishedFiles.sh,s07_Humann2;s06_DUDes;s05_Bowtie2;s04_Metaphlan2;s02_Kneaddata;s01_FastQC;s00_CreateExternSamplesProjects
+s09_CopyToResultsDir,protocols/CopyToResultsDir.sh,s08_CountAllFinishedFiles

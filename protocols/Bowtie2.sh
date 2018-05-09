@@ -1,4 +1,4 @@
-#MOLGENIS nodes=1 ppn=1 mem=45gb walltime=23:59:00
+#MOLGENIS nodes=1 ppn=1 mem=45gb walltime=09:59:00
 
 #Parameter mapping
 #string seqType
@@ -32,7 +32,7 @@ ${EBROOTBOWTIE2}/bin/bowtie2 \
 -k 50 \
 -1 "${sampleKneadDataOutPE1}" \
 -2 "${sampleKneadDataOutPE2}" \
--S "${tmpsampleBowtie2Sam}"
+-S "${tmpsampleBowtie2Sam}"> ${intermediateDir}/${externalSampleID}.bowtie2.log 2>&1
 
 echo "mv ${tmpsampleBowtie2Sam} ${sampleBowtie2Sam}"
 mv "${tmpsampleBowtie2Sam}" "${sampleBowtie2Sam}"

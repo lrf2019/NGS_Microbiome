@@ -1,4 +1,4 @@
-#MOLGENIS nodes=1 ppn=1 mem2gb walltime=23:59:00
+#MOLGENIS nodes=1 ppn=1 mem2gb walltime=09:59:00
 
 #Parameter mapping
 #string seqType
@@ -19,8 +19,8 @@
 
 #Load module
 module load "${kneaddataVersion}"
-module load "${Bowtie2Version}"
-module load "${fastqcVersion}"
+#module load "${Bowtie2Version}"
+#module load "${fastqcVersion}"
 module list
 
 echo "Remove reads mapping the human genome and quality filtering with Kneaddata:"
@@ -38,6 +38,7 @@ kneaddata \
 -db "${bowtie2Reference}" \
 --bowtie2 ${EBROOTBOWTIE2}/bin/ \
 --fastqc "${EBROOTFASTQC}" \
+--trimmomatic "${EBROOTTRIMMOMATIC}" \
 --output "${tmpsampleKneadDataOut}/" \
 --log "${tmpsampleKneadDataOut}/"${externalSampleID}".log"
 

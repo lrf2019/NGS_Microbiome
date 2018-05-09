@@ -1,4 +1,4 @@
-#MOLGENIS walltime=00:02:00 mem=1gb
+#MOLGENIS walltime=00:01:00 mem=1gb nodes=1 ppn=1
 
 #Parameter mapping
 #list fastq1
@@ -18,6 +18,7 @@
 #string group
 #string tmpDirectory
 #string logsDir
+#string samplesheet
 
 #
 # Create project dirs.
@@ -30,6 +31,7 @@ mkdir -p "${projectQcDir}"
 
 ROCKETPOINT=$(pwd)
 
+cp "${samplesheet}" "${projectJobsDir}"
 cd "${projectRawtmpDataDir}"
 
 #

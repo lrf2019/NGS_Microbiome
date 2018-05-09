@@ -7,7 +7,7 @@
 #string project
 #string intermediateDir
 #string sampleKneadDataOut
-#string sampleKneadDataMergedFasta
+#string sampleKneadDataMergedFastq
 #string kneaddataVersion
 #string Bowtie2Version
 #string picardVersion
@@ -32,7 +32,7 @@ module load "${humann2Version}"
 echo "Run Humann2, WARNING: Check Humann2 configuration!!! (We currently use Uniref90 + Chocophlan db)"
 echo "Starting pathways prediction using Humann2"
 
-humann2 --input "${sampleKneadDataMergedFasta}" \
+humann2 --input "${sampleKneadDataMergedFastq}" \
 --output "${intermediateDir}" \
 --taxonomic-profile "${sampleMetaphlanOutTxt}" \
 --diamond ${EBROOTDIAMOND}/diamond \
