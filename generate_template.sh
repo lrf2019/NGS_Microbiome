@@ -1,7 +1,6 @@
 #!/bin/bash
 
 module load NGS_Microbiome/1.0.0
-module load Molgenis-Compute/v17.08.1-Java-1.8.0_74
 module list
 
 ENVIRONMENT=$(hostname -s)
