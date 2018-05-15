@@ -9,7 +9,7 @@
 #string intermediateDir
 #string dudesVersion
 #string sampleBowtie2Sam
-#string DudesReferenceNpz
+#string dudesReferenceNpz
 #string sampleDudesOut
 #string project
 #string group
@@ -24,7 +24,7 @@ module load "${dudesVersion}"
 
 python3 ${EBROOTDUDES}/DUDes.py \
 -s "${sampleBowtie2Sam}" \
--d "${DudesReferenceNpz}" \
+-d "${dudesReferenceNpz}" \
 -t 6 \
 -m 50 \
 -a 0.0005 \

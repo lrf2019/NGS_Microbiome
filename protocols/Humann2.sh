@@ -9,9 +9,9 @@
 #string sampleKneadDataOut
 #string sampleKneadDataMergedFastq
 #string kneaddataVersion
-#string Bowtie2Version
+#string bowtie2Version
 #string picardVersion
-#string Bowtie2Version
+#string bowtie2Version
 #string humann2Version
 #string sampleMetaphlanOutTxt
 #string project
@@ -26,7 +26,7 @@ tmpsampleKneadDataOut=${MC_tmpFile}
 
 #Load module
 module load "${picardVersion}"
-module load "${Bowtie2Version}"
+module load "${bowtie2Version}"
 module load "${humann2Version}"
 
 echo "Run Humann2, WARNING: Check Humann2 configuration!!! (We currently use Uniref90 + Chocophlan db)"

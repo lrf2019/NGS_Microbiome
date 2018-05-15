@@ -6,7 +6,7 @@
 #string project
 #string intermediateDir
 #string sampleKneadDataMergedFastq
-#string MetaPhlAn2Index
+#string metaPhlAn2Index
 #string sampleMetaphlanOutDir
 #string sampleMetaphlanOutTxt
 #string metaphlan2Version
@@ -27,7 +27,7 @@ module list
 echo "Starting taxonomy classification using Metaphlan"
 metaphlan2.py "${sampleKneadDataMergedFastq}" \
 --input_type multifastq \
---mpa_pkl "${MetaPhlAn2Index}" \
+--mpa_pkl "${metaPhlAn2Index}" \
 --nproc 6 \
 -o "${sampleMetaphlanOutDir}"/"${externalSampleID}"_metaphlan.txt \
 --tmp_dir "${tmpsampleMetaphlanOutDir}"

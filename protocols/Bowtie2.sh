@@ -7,25 +7,25 @@
 #string externalSampleID
 #string project
 #string intermediateDir
-#string DudesReference
+#string dudesReference
 #string sampleKneadDataOutPE1
 #string sampleKneadDataOutPE2
 #string sampleBowtie2Sam
-#string Bowtie2Version
+#string bowtie2Version
 #string project
 #string group
 #string tmpDirectory
 #string logsDir
 
 #Load module
-module load "${Bowtie2Version}"
+module load "${bowtie2Version}"
 module list
 
 makeTmpDir "${sampleBowtie2Sam}"
 tmpsampleBowtie2Sam=${MC_tmpFile}
 
 ${EBROOTBOWTIE2}/bin/bowtie2 \
--x "${DudesReference}" \
+-x "${dudesReference}" \
 --no-unal \
 --fast \
 -p 6 \

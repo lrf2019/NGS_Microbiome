@@ -10,7 +10,7 @@
 #string intermediateDir
 #string sampleKneadDataOut
 #string kneaddataVersion
-#string Bowtie2Version
+#string bowtie2Version
 #string fastqcVersion
 #string project
 #string group
@@ -19,8 +19,6 @@
 
 #Load module
 module load "${kneaddataVersion}"
-#module load "${Bowtie2Version}"
-#module load "${fastqcVersion}"
 module list
 
 echo "Remove reads mapping the human genome and quality filtering with Kneaddata:"
