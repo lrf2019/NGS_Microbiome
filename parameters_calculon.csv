@@ -1,5 +1,6 @@
 queue,ll
 prmName,prm02
+tmpName,tmp04
 prmHost,localhost
 root,/
 appsDir,${root}/apps/

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#module load NGS_Microbiome
+module load NGS_Microbiome/1.0.0
 module load Molgenis-Compute/v17.08.1-Java-1.8.0_74
 module list
 
@@ -50,7 +50,6 @@ PROJECT=${filePrefix}
 
 WORKFLOW=${EBROOTNGS_MICROBIOME}/workflow.csv
 
-#exit 0
 perl ${EBROOTNGS_MICROBIOME}/scripts/convertParametersGitToMolgenis.pl ${EBROOTNGS_MICROBIOME}/parameters.csv > \
 ${workDir}/generatedscripts/${PROJECT}/parameters.csv
 
