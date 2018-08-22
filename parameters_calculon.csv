@@ -1,0 +1,7 @@
+queue,ll
+prmName,prm02
+tmpName,tmp04
+prmHost,localhost
+root,/
+appsDir,${root}/apps/
+toolChain,foss-2015b
